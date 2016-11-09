@@ -19,3 +19,23 @@ ingredients = {
     "sweet": ["sugar cube", "spoonful of honey", "spash of cola"],
     "fruity": ["slice of orange", "dash of cassis", "cherry on top"],
 }
+
+yes = set(['yes','y', 'ye', ''])
+no = set(['no','n'])
+
+preferences = {}
+#Ask customer what they like
+def taste():
+    for key, value in questions.items():
+        print(questions)
+#combine likes in random fashions    
+def mix(preferences):
+
+if __name__ == '__main__':
+drinking = input("Ahoy, would ye like to wet ye tongue, bucko?")
+    if drinking == "y":
+        taste()
+        mix(preferences)
+    else:
+        print("Get out 'o me bar")
+    
