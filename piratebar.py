@@ -23,11 +23,12 @@ ingredients = {
 yes = set(['yes','y', 'ye', ''])
 no = set(['no','n'])
 
-preferences = {}
+
 #Ask customer what they like
 def taste():
-    for key, value in questions.items():
-        print(questions)
+    preferences = {}
+    for type, question in questions.items():
+        preferences[type]= input(question)
 #combine likes in random fashions    
 def mix(preferences):
 
