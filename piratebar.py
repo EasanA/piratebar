@@ -20,21 +20,28 @@ ingredients = {
     "fruity": ["slice of orange", "dash of cassis", "cherry on top"],
 }
 
-yes = set(['yes','y', 'ye', ''])
-no = set(['no','n'])
-
-
+preferences = {}
 #Ask customer what they like
 def taste():
-    preferences = {}
-    for type, question in questions.items():
-        preferences[type]= input(question)
+    print("Please answer Yes or No to the following: ")
+    for question in questions:
+        if input(questions.get(question) + "\n") in ['y', 'yes']:
+            preferences[question] = True
+        else:
+            preferences[question] = False
 #combine likes in random fashions    
+drink = {}
 def mix(preferences):
-
+    print("Ye drink consists 'o: ")
+    for ingredient in ingredients:
+        if preferences[ingredient] == True:
+            print(random.choice(ingredients.get(ingredient)))
+        
 if __name__ == '__main__':
-drinking = input("Ahoy, would ye like to wet ye tongue, bucko?")
-    if drinking == "y":
+    drinking = input("Ahoy, would ye like to wet ye tongue, bucko?")
+    yes = set(['yes','y', 'ye', ''])
+    no = set(['no','n'])
+    if drinking in yes:
         taste()
         mix(preferences)
     else:
