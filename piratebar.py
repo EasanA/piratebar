@@ -25,12 +25,11 @@ preferences = {}
 def taste():
     print("Please answer Yes or No to the following: ")
     for question in questions:
-        if input(questions.get(question) + "\n") in ['y', 'yes']:
+        if input(questions.get(question)) in ['y', 'yes']:
             preferences[question] = True
         else:
             preferences[question] = False
 #combine likes in random fashions    
-drink = {}
 def mix(preferences):
     print("Ye drink consists 'o: ")
     for ingredient in ingredients:
@@ -39,11 +38,8 @@ def mix(preferences):
         
 if __name__ == '__main__':
     drinking = input("Ahoy, would ye like to wet ye tongue, bucko?")
-    yes = set(['yes','y', 'ye', ''])
-    no = set(['no','n'])
-    if drinking in yes:
+    if drinking == "yes" or "y":
         taste()
         mix(preferences)
     else:
         print("Get out 'o me bar")
-    
